@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Form Example</title>
+    <!-- Include Bootstrap CSS from CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Optional: Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            /* Gradient background from light blue to soft gray */
+            background: linear-gradient(to right, #cae9ff, #e2e2e2);
+            height: 100vh; /* Full height of the viewport */
+            display: flex;
+            align-items: center; /* Centers the card vertically */
+            justify-content: center; /* Centers the card horizontally */
+            padding: 0 10px; /* Ensures some padding around the content */
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* A subtle shadow for depth */
+            border: none; /* Removes the default border for a cleaner look */
+        }
+        .form-control:focus {
+            box-shadow: none; /* Removes the default focus shadow for a cleaner look */
+            border-color: #007bff; /* Adds a blue border on focus, matching the primary button */
+        }
+        .btn-primary {
+            background-color: #007bff; /* Ensure consistent button color */
+            border: none; /* Removes the default border */
+        }
+        .card-title {
+            margin-bottom: 2rem; /* More space above the form for a balanced appearance */
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-body p-4 p-md-5">
+            <h1 class="card-title text-center">Example Form</h1>
+            <form action="generate-pdf.php" method="post">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity"><i class="fas fa-cubes"></i> Quantity</label>
+                    <input type="text" class="form-control" name="quantity" id="quantity" placeholder="Enter quantity" min="1">
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Generate PDF</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
