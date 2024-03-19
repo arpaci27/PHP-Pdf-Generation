@@ -19,9 +19,19 @@ $options->setChroot(__DIR__);
 $dompdf = new Dompdf($options
 );
 
-$dompdf->load_html($html);
-
 $dompdf->setPaper('A4');
+
+$html = file_get_contents('template.html');
+
+// Assuming $html contains the HTML content with placeholders
+$html = str_replace("{{ name }}", $name, $html); // Replace {{ name }} with the value of $name
+$html = str_replace("{{ quantity }}", $quantity, $html); // Replace {{ quantity }} with the value of $quantity
+
+
+$dompdf->load_html($html);
+//$dompdf->load_html_file('template.html');
+
+
 
 $dompdf->render();
 
